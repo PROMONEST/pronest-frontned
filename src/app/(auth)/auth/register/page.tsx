@@ -1,4 +1,5 @@
 "use client";
+
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import Grid from "@mui/material/Grid";
@@ -8,8 +9,38 @@ import Link from "next/link";
 import Logo from "@/app/(DashboardLayout)/layout/shared/logo/Logo";
 import PageContainer from "@/app/components/container/PageContainer";
 import AuthRegister from "../../authForms/AuthRegister";
+import { useAuth } from "@/hooks/auth";
+import { useState } from "react";
 
-export default function Register2() {
+const AuthRegisterPage = () => {
+  const { register } = useAuth({
+    middleware: "guest",
+    redirectIfAuthenticated: "/dashboard",
+  });
+
+  const [errors, setErrors] = useState<Record<string, string[]>>({});
+  const [successMessage, setSuccessMessage] = useState<string | null>(null);
+
+  const handleRegister = async (data: {
+    name: string;
+    email: string;
+    password: string;
+  }) => {
+    setErrors({});
+    setSuccessMessage(null);
+
+    try {
+      await register({
+        ...data,
+        password_confirmation: data.password,
+        setErrors,
+      });
+      setSuccessMessage("Registration successful! Redirecting...");
+    } catch (error) {
+      // TODO: エラーハンドリング
+    }
+  };
+
   return (
     <PageContainer title="Register Page" description="this is Sample page">
       <Box
@@ -51,6 +82,9 @@ export default function Register2() {
                 <Logo />
               </Box>
               <AuthRegister
+                onSubmit={handleRegister}
+                errors={errors}
+                successMessage={successMessage}
                 subtext={
                   <Typography
                     variant="subtitle1"
@@ -90,4 +124,6 @@ export default function Register2() {
       </Box>
     </PageContainer>
   );
-}
+};
+
+export default AuthRegisterPage;

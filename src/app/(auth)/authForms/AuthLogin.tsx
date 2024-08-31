@@ -1,30 +1,53 @@
+import React from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import Divider from "@mui/material/Divider";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import FormGroup from "@mui/material/FormGroup";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import Link from "next/link";
-import { loginType } from "@/app/(DashboardLayout)/types/auth/auth";
 import CustomCheckbox from "@/app/components/forms/theme-elements/CustomCheckbox";
 import CustomTextField from "@/app/components/forms/theme-elements/CustomTextField";
 import CustomFormLabel from "@/app/components/forms/theme-elements/CustomFormLabel";
+import FormControlLabel from "@mui/material/FormControlLabel";
 
-const AuthLogin = ({ title, subtitle, subtext }: loginType) => (
-  <>
-    {title ? (
-      <Typography fontWeight="700" variant="h3" mb={1}>
-        {title}
-      </Typography>
-    ) : null}
+interface AuthLoginProps {
+  email: string;
+  password: string;
+  setEmail: (value: string) => void;
+  setPassword: (value: string) => void;
+  shouldRemember: boolean;
+  setShouldRemember: (value: boolean) => void;
+  errors: Record<string, string[]>;
+  handleSubmit: (event: React.FormEvent) => void;
+  subtitle?: React.ReactNode;
+}
 
-    {subtext}
-
-    <Stack>
+const AuthLogin: React.FC<AuthLoginProps> = ({
+  email,
+  password,
+  setEmail,
+  setPassword,
+  shouldRemember,
+  setShouldRemember,
+  errors,
+  handleSubmit,
+  subtitle,
+}) => {
+  return (
+    <Stack component="form" onSubmit={handleSubmit}>
       <Box>
-        <CustomFormLabel htmlFor="username">Username</CustomFormLabel>
-        <CustomTextField id="username" variant="outlined" fullWidth />
+        <CustomFormLabel htmlFor="email">Email</CustomFormLabel>
+        <CustomTextField
+          id="email"
+          type="email"
+          variant="outlined"
+          fullWidth
+          value={email}
+          onChange={(e: { target: { value: string } }) =>
+            setEmail(e.target.value)
+          }
+          error={!!errors.email}
+          helperText={errors.email?.[0]}
+        />
       </Box>
       <Box>
         <CustomFormLabel htmlFor="password">Password</CustomFormLabel>
@@ -33,6 +56,12 @@ const AuthLogin = ({ title, subtitle, subtext }: loginType) => (
           type="password"
           variant="outlined"
           fullWidth
+          value={password}
+          onChange={(e: { target: { value: string } }) =>
+            setPassword(e.target.value)
+          }
+          error={!!errors.password}
+          helperText={errors.password?.[0]}
         />
       </Box>
       <Stack
@@ -41,12 +70,15 @@ const AuthLogin = ({ title, subtitle, subtext }: loginType) => (
         alignItems="center"
         my={2}
       >
-        <FormGroup>
-          <FormControlLabel
-            control={<CustomCheckbox defaultChecked />}
-            label="Remeber this Device"
-          />
-        </FormGroup>
+        <FormControlLabel
+          control={
+            <CustomCheckbox
+              checked={shouldRemember}
+              onChange={(e) => setShouldRemember(e.target.checked)}
+            />
+          }
+          label="Remember this Device"
+        />
         <Typography
           component={Link}
           href="/auth/auth1/forgot-password"
@@ -56,25 +88,23 @@ const AuthLogin = ({ title, subtitle, subtext }: loginType) => (
             color: "primary.main",
           }}
         >
-          Forgot Password ?
+          Forgot Password?
         </Typography>
       </Stack>
+      <Box>
+        <Button
+          color="primary"
+          variant="contained"
+          size="large"
+          fullWidth
+          type="submit"
+        >
+          Sign In
+        </Button>
+      </Box>
+      {subtitle}
     </Stack>
-    <Box>
-      <Button
-        color="primary"
-        variant="contained"
-        size="large"
-        fullWidth
-        component={Link}
-        href="/"
-        type="submit"
-      >
-        Sign In
-      </Button>
-    </Box>
-    {subtitle}
-  </>
-);
+  );
+};
 
 export default AuthLogin;

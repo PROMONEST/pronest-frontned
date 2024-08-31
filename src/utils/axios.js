@@ -1,12 +1,12 @@
- import axios from 'axios';
+import Axios from 'axios'
 
- const axiosServices = axios.create();
- 
- // interceptor for http
- axiosServices.interceptors.response.use(
-     (response) => response,
-     (error) => Promise.reject((error.response && error.response.data) || 'Wrong Services')
- );
- 
- export default axiosServices;
- 
+const axios = Axios.create({
+    baseURL: process.env.NEXT_PUBLIC_BACKEND_URL,
+    headers: {
+        'X-Requested-With': 'XMLHttpRequest',
+    },
+    withCredentials: true,
+    withXSRFToken: true
+})
+
+export default axios
