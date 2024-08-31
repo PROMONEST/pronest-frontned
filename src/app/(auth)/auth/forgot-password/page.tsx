@@ -13,7 +13,7 @@ import Alert from "@mui/material/Alert";
 export default function ForgotPasswordPage() {
   const { forgotPassword } = useAuth({
     middleware: "guest",
-    redirectIfAuthenticated: "/dashboard",
+    redirectIfAuthenticated: "/",
   });
 
   const [email, setEmail] = useState<string>("");

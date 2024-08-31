@@ -58,9 +58,11 @@ export const useAuth = ({
       .get("/user")
       .then((res) => res.data)
       .catch((error) => {
-        if (error.response.status !== 409) throw error;
-
-        router.push("/verify-email");
+        if (error.response?.status === 409) {
+          router.push("/verify-email");
+        } else {
+          throw error;
+        }
       })
   );
 
@@ -213,5 +215,6 @@ export const useAuth = ({
     resetPassword,
     resendEmailVerification,
     logout,
+    error,
   };
 };
