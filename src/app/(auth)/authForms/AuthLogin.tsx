@@ -35,7 +35,7 @@ const AuthLogin: React.FC<AuthLoginProps> = ({
   return (
     <Stack component="form" onSubmit={handleSubmit}>
       <Box>
-        <CustomFormLabel htmlFor="email">Email</CustomFormLabel>
+        <CustomFormLabel htmlFor="email">メールアドレス</CustomFormLabel>
         <CustomTextField
           id="email"
           type="email"
@@ -50,7 +50,7 @@ const AuthLogin: React.FC<AuthLoginProps> = ({
         />
       </Box>
       <Box>
-        <CustomFormLabel htmlFor="password">Password</CustomFormLabel>
+        <CustomFormLabel htmlFor="password">パスワード</CustomFormLabel>
         <CustomTextField
           id="password"
           type="password"
@@ -77,18 +77,18 @@ const AuthLogin: React.FC<AuthLoginProps> = ({
               onChange={(e) => setShouldRemember(e.target.checked)}
             />
           }
-          label="Remember this Device"
+          label="ログイン情報を保存する"
         />
         <Typography
           component={Link}
-          href="/auth/auth1/forgot-password"
+          href="/auth/forgot-password"
           fontWeight="500"
           sx={{
             textDecoration: "none",
             color: "primary.main",
           }}
         >
-          Forgot Password?
+          パスワードを忘れた場合
         </Typography>
       </Stack>
       <Box>
@@ -99,7 +99,7 @@ const AuthLogin: React.FC<AuthLoginProps> = ({
           fullWidth
           type="submit"
         >
-          Sign In
+          ログイン
         </Button>
       </Box>
       {subtitle}

@@ -9,7 +9,7 @@ export default function AuthForgotPassword() {
   return (
     <>
       <Stack mt={4} spacing={2}>
-        <CustomFormLabel htmlFor="reset-email">Email Adddress</CustomFormLabel>
+        <CustomFormLabel htmlFor="reset-email">メールアドレス</CustomFormLabel>
         <CustomTextField id="reset-email" variant="outlined" fullWidth />
 
         <Button
@@ -20,7 +20,7 @@ export default function AuthForgotPassword() {
           component={Link}
           href="/"
         >
-          Forgot Password
+          パスワードをリセット
         </Button>
         <Button
           color="primary"
@@ -29,7 +29,7 @@ export default function AuthForgotPassword() {
           component={Link}
           href="/auth/auth1/login"
         >
-          Back to Login
+          ログイン画面へ
         </Button>
       </Stack>
     </>

@@ -47,7 +47,7 @@ const AuthRegister: React.FC<AuthRegisterProps> = ({
       {successMessage && <Alert severity="success">{successMessage}</Alert>}
 
       <Stack mb={3}>
-        <CustomFormLabel htmlFor="name">Name</CustomFormLabel>
+        <CustomFormLabel htmlFor="name">名前</CustomFormLabel>
         <CustomTextField
           id="name"
           variant="outlined"
@@ -59,7 +59,7 @@ const AuthRegister: React.FC<AuthRegisterProps> = ({
           error={!!errors.name}
           helperText={errors.name?.[0]}
         />
-        <CustomFormLabel htmlFor="email">Email Address</CustomFormLabel>
+        <CustomFormLabel htmlFor="email">メールアドレス</CustomFormLabel>
         <CustomTextField
           id="email"
           variant="outlined"
@@ -71,7 +71,7 @@ const AuthRegister: React.FC<AuthRegisterProps> = ({
           error={!!errors.email}
           helperText={errors.email?.[0]}
         />
-        <CustomFormLabel htmlFor="password">Password</CustomFormLabel>
+        <CustomFormLabel htmlFor="password">パスワード</CustomFormLabel>
         <CustomTextField
           id="password"
           variant="outlined"
@@ -92,7 +92,7 @@ const AuthRegister: React.FC<AuthRegisterProps> = ({
         size="large"
         fullWidth
       >
-        Sign Up
+        新規登録
       </Button>
 
       {subtitle}

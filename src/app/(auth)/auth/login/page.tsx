@@ -41,7 +41,7 @@ export default function LoginPage() {
   };
 
   return (
-    <PageContainer title="Login Page" description="this is Sample page">
+    <PageContainer title="ログイン" description="ログイン画面">
       <Box
         sx={{
           position: "relative",
@@ -102,18 +102,18 @@ export default function LoginPage() {
                       variant="h6"
                       fontWeight="500"
                     >
-                      New to Modernize?
+                      アカウントをお持ちでないですか？
                     </Typography>
                     <Typography
                       component={Link}
-                      href="/auth/auth2/register"
+                      href="/auth/register"
                       fontWeight="500"
                       sx={{
                         textDecoration: "none",
                         color: "primary.main",
                       }}
                     >
-                      Create an account
+                      アカウントを登録
                     </Typography>
                   </Stack>
                 }

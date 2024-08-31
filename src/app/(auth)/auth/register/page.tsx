@@ -42,7 +42,7 @@ const AuthRegisterPage = () => {
   };
 
   return (
-    <PageContainer title="Register Page" description="this is Sample page">
+    <PageContainer title="新規登録" description="新規登録画面">
       <Box
         sx={{
           position: "relative",
@@ -92,7 +92,7 @@ const AuthRegisterPage = () => {
                     color="textSecondary"
                     mb={1}
                   >
-                    Your Social Campaigns
+                    ProNest
                   </Typography>
                 }
                 subtitle={
@@ -102,18 +102,18 @@ const AuthRegisterPage = () => {
                       variant="h6"
                       fontWeight="400"
                     >
-                      Already have an Account?
+                      すでにアカウントをお持ちですか？
                     </Typography>
                     <Typography
                       component={Link}
-                      href="/auth/auth2/login"
+                      href="/auth/login"
                       fontWeight="500"
                       sx={{
                         textDecoration: "none",
                         color: "primary.main",
                       }}
                     >
-                      Sign In
+                      ログイン
                     </Typography>
                   </Stack>
                 }

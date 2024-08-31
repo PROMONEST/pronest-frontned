@@ -9,7 +9,7 @@ import AuthTwoSteps from "../../authForms/AuthTwoSteps";
 
 export default function TwoSteps2() {
   return (
-    <PageContainer title="Two steps Page" description="this is Sample page">
+    <PageContainer title="二段階認証" description="二段階認証画面">
       <Box
         sx={{
           position: "relative",
@@ -54,8 +54,8 @@ export default function TwoSteps2() {
                 color="textSecondary"
                 mb={1}
               >
-                We sent a verification code to your mobile. Enter the code from
-                the mobile in the field below.
+                携帯電話に確認コードを送信しました。
+                携帯電話からコードを入力してください。
               </Typography>
               <Typography
                 variant="subtitle1"

@@ -9,10 +9,7 @@ import AuthForgotPassword from "../../authForms/AuthForgotPassword";
 
 export default function ForgotPassword2() {
   return (
-    <PageContainer
-      title="Forgot Password Page"
-      description="this is Sample page"
-    >
+    <PageContainer title="パスワード再設定" description="パスワード再設定画面">
       <Box
         sx={{
           position: "relative",
@@ -57,8 +54,8 @@ export default function ForgotPassword2() {
                 variant="subtitle2"
                 fontWeight="400"
               >
-                Please enter the email address associated with your account and
-                We will email you a link to reset your password.
+                アカウントに関連付けられたメールアドレスを入力してください。
+                パスワードをリセットするためのリンクをメールでお送りします。
               </Typography>
               <AuthForgotPassword />
             </Card>

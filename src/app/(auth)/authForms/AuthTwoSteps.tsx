@@ -11,7 +11,7 @@ const AuthTwoSteps = () => (
     <Box mt={4}>
       <Stack mb={3}>
         <CustomFormLabel htmlFor="code">
-          Type your 6 digits security code{" "}
+          6桁のセキュリティコードを入力してください
         </CustomFormLabel>
         <Stack spacing={2} direction="row">
           <CustomTextField id="code" variant="outlined" fullWidth />
@@ -30,12 +30,12 @@ const AuthTwoSteps = () => (
         component={Link}
         href="/"
       >
-        Verify My Account
+        アカウントを確認
       </Button>
 
       <Stack direction="row" spacing={1} mt={3}>
         <Typography color="textSecondary" variant="h6" fontWeight="400">
-          Didn&apos;t get the code?
+          コードが届かない場合
         </Typography>
         <Typography
           component={Link}
@@ -46,7 +46,7 @@ const AuthTwoSteps = () => (
             color: "primary.main",
           }}
         >
-          Resend
+          再送信
         </Typography>
       </Stack>
     </Box>
