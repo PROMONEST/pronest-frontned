@@ -8,14 +8,13 @@ import IconButton from "@mui/material/IconButton";
 import Menu from "@mui/material/Menu";
 import Typography from "@mui/material/Typography";
 import * as dropdownData from "./data";
-
 import { IconMail } from "@tabler/icons-react";
 import { Stack } from "@mui/system";
 import Image from "next/image";
 import { useAuth } from "@/hooks/auth";
 
 const Profile = () => {
-  const { logout } = useAuth();
+  const { user, logout } = useAuth();
   const [anchorEl2, setAnchorEl2] = useState(null);
 
   const handleClick2 = (event: any) => {
@@ -42,7 +41,7 @@ const Profile = () => {
         onClick={handleClick2}
       >
         <Avatar
-          src={"/images/profile/user-1.jpg"}
+          src={user?.profileImage || "/images/profile/user-1.jpg"}
           alt={"ProfileImg"}
           sx={{
             width: 35,
@@ -68,7 +67,7 @@ const Profile = () => {
         <Typography variant="h5">User Profile</Typography>
         <Stack direction="row" py={3} spacing={2} alignItems="center">
           <Avatar
-            src={"/images/profile/user-1.jpg"}
+            src={user?.profileImage || "/images/profile/user-1.jpg"}
             alt={"ProfileImg"}
             sx={{ width: 95, height: 95 }}
           />
@@ -78,10 +77,10 @@ const Profile = () => {
               color="textPrimary"
               fontWeight={600}
             >
-              Mathew Anderson
+              {user?.name || "Guest User"}
             </Typography>
             <Typography variant="subtitle2" color="textSecondary">
-              Designer
+              {user?.role || "Role"}
             </Typography>
             <Typography
               variant="subtitle2"
@@ -91,7 +90,7 @@ const Profile = () => {
               gap={1}
             >
               <IconMail width={15} height={15} />
-              info@modernize.com
+              {user?.email || "info@modernize.com"}{" "}
             </Typography>
           </Box>
         </Stack>
