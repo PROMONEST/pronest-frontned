@@ -77,10 +77,10 @@ const Profile = () => {
               color="textPrimary"
               fontWeight={600}
             >
-              {user?.name || "Guest User"}
+              {user?.name || "ゲストユーザー"}
             </Typography>
             <Typography variant="subtitle2" color="textSecondary">
-              {user?.role || "Role"}
+              {user?.role || "権限"}
             </Typography>
             <Typography
               variant="subtitle2"
@@ -90,7 +90,7 @@ const Profile = () => {
               gap={1}
             >
               <IconMail width={15} height={15} />
-              {user?.email || "info@modernize.com"}{" "}
+              {user?.email || "メールアドレス"}
             </Typography>
           </Box>
         </Stack>
