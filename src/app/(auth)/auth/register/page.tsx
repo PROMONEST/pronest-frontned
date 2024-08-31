@@ -15,7 +15,7 @@ import { useState } from "react";
 const AuthRegisterPage = () => {
   const { register } = useAuth({
     middleware: "guest",
-    redirectIfAuthenticated: "/dashboard",
+    redirectIfAuthenticated: "/",
   });
 
   const [errors, setErrors] = useState<Record<string, string[]>>({});
