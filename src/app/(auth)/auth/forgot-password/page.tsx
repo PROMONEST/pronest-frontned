@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import Grid from "@mui/material/Grid";
@@ -6,8 +7,29 @@ import Typography from "@mui/material/Typography";
 import Logo from "@/app/(DashboardLayout)/layout/shared/logo/Logo";
 import PageContainer from "@/app/components/container/PageContainer";
 import AuthForgotPassword from "../../authForms/AuthForgotPassword";
+import { useAuth } from "@/hooks/auth";
+import Alert from "@mui/material/Alert";
 
-export default function ForgotPassword2() {
+export default function ForgotPasswordPage() {
+  const { forgotPassword } = useAuth({
+    middleware: "guest",
+    redirectIfAuthenticated: "/dashboard",
+  });
+
+  const [email, setEmail] = useState<string>("");
+  const [errors, setErrors] = useState<Record<string, string[]>>({});
+  const [status, setStatus] = useState<string | null>(null);
+
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+
+    try {
+      forgotPassword({ email, setErrors, setStatus });
+    } catch (error) {
+      // TODO: エラーハンドリング
+    }
+  };
+
   return (
     <PageContainer title="パスワード再設定" description="パスワード再設定画面">
       <Box
@@ -57,7 +79,13 @@ export default function ForgotPassword2() {
                 アカウントに関連付けられたメールアドレスを入力してください。
                 パスワードをリセットするためのリンクをメールでお送りします。
               </Typography>
-              <AuthForgotPassword />
+              {status && <Alert severity="success">{status}</Alert>}
+              <AuthForgotPassword
+                email={email}
+                setEmail={setEmail}
+                errors={errors}
+                handleSubmit={handleSubmit}
+              />
             </Card>
           </Grid>
         </Grid>
