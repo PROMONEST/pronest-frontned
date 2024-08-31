@@ -12,12 +12,16 @@ import * as dropdownData from "./data";
 import { IconMail } from "@tabler/icons-react";
 import { Stack } from "@mui/system";
 import Image from "next/image";
+import { useAuth } from "@/hooks/auth";
 
 const Profile = () => {
+  const { logout } = useAuth();
   const [anchorEl2, setAnchorEl2] = useState(null);
+
   const handleClick2 = (event: any) => {
     setAnchorEl2(event.currentTarget);
   };
+
   const handleClose2 = () => {
     setAnchorEl2(null);
   };
@@ -46,9 +50,6 @@ const Profile = () => {
           }}
         />
       </IconButton>
-      {/* ------------------------------------------- */}
-      {/* Message Dropdown */}
-      {/* ------------------------------------------- */}
       <Menu
         id="msgs-menu"
         anchorEl={anchorEl2}
@@ -175,14 +176,8 @@ const Profile = () => {
               />
             </Box>
           </Box>
-          <Button
-            href="/auth/auth1/login"
-            variant="outlined"
-            color="primary"
-            component={Link}
-            fullWidth
-          >
-            Logout
+          <Button variant="outlined" color="primary" fullWidth onClick={logout}>
+            ログアウト
           </Button>
         </Box>
       </Menu>

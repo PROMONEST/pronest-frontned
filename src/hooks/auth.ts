@@ -192,7 +192,7 @@ export const useAuth = ({
       await axios.post("/logout").then(() => mutate());
     }
 
-    window.location.pathname = "/login";
+    window.location.pathname = "/auth/login";
   };
 
   useEffect(() => {

@@ -7,6 +7,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import { useSelector } from "@/store/hooks";
 import { IconPower } from "@tabler/icons-react";
 import { AppState } from "@/store/store";
+import { useAuth } from "@/hooks/auth";
 import Link from "next/link";
 
 export const Profile = () => {
@@ -15,6 +16,7 @@ export const Profile = () => {
   const hideMenu = lgUp
     ? customizer.isCollapse && !customizer.isSidebarHover
     : "";
+  const { logout } = useAuth();
 
   return (
     <Box
@@ -37,13 +39,7 @@ export const Profile = () => {
           </Box>
           <Box sx={{ ml: "auto" }}>
             <Tooltip title="Logout" placement="top">
-              <IconButton
-                color="primary"
-                component={Link}
-                href="/auth/auth1/login"
-                aria-label="logout"
-                size="small"
-              >
+              <IconButton color="primary" aria-label="ログアウト" size="small">
                 <IconPower size="20" />
               </IconButton>
             </Tooltip>
