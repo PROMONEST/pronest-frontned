@@ -16,7 +16,7 @@ export const Profile = () => {
   const hideMenu = lgUp
     ? customizer.isCollapse && !customizer.isSidebarHover
     : "";
-  const { logout } = useAuth();
+  const { user, logout } = useAuth();
 
   return (
     <Box
@@ -28,18 +28,27 @@ export const Profile = () => {
       {!hideMenu ? (
         <>
           <Avatar
-            alt="Remy Sharp"
-            src={"/images/profile/user-1.jpg"}
+            alt={user?.name || "ゲストユーザー"}
+            src={user?.profileImage || "/images/profile/user-1.jpg"}
             sx={{ height: 40, width: 40 }}
           />
 
           <Box>
-            <Typography variant="h6">Mathew</Typography>
-            <Typography variant="caption">Designer</Typography>
+            <Typography variant="h6">
+              {user?.name || "ゲストユーザー"}
+            </Typography>
+            <Typography variant="caption">
+              {user?.email || "メールアドレス"}
+            </Typography>
           </Box>
           <Box sx={{ ml: "auto" }}>
             <Tooltip title="Logout" placement="top">
-              <IconButton color="primary" aria-label="ログアウト" size="small">
+              <IconButton
+                color="primary"
+                aria-label="ログアウト"
+                size="small"
+                onClick={logout}
+              >
                 <IconPower size="20" />
               </IconButton>
             </Tooltip>

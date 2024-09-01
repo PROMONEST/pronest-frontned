@@ -77,10 +77,10 @@ const Profile = () => {
               color="textPrimary"
               fontWeight={600}
             >
-              {user?.name || "Guest User"}
+              {user?.name || "ゲストユーザー"}
             </Typography>
             <Typography variant="subtitle2" color="textSecondary">
-              {user?.role || "Role"}
+              {user?.role || "権限"}
             </Typography>
             <Typography
               variant="subtitle2"
@@ -90,7 +90,7 @@ const Profile = () => {
               gap={1}
             >
               <IconMail width={15} height={15} />
-              {user?.email || "info@modernize.com"}{" "}
+              {user?.email || "メールアドレス"}
             </Typography>
           </Box>
         </Stack>
@@ -149,32 +149,6 @@ const Profile = () => {
           </Box>
         ))}
         <Box mt={2}>
-          <Box
-            bgcolor="primary.light"
-            p={3}
-            mb={3}
-            overflow="hidden"
-            position="relative"
-          >
-            <Box display="flex" justifyContent="space-between">
-              <Box>
-                <Typography variant="h5" mb={2}>
-                  Unlimited <br />
-                  Access
-                </Typography>
-                <Button variant="contained" color="primary">
-                  Upgrade
-                </Button>
-              </Box>
-              <Image
-                src={"/images/backgrounds/unlimited-bg.png"}
-                width={150}
-                height={183}
-                alt="unlimited"
-                className="signup-bg"
-              />
-            </Box>
-          </Box>
           <Button variant="outlined" color="primary" fullWidth onClick={logout}>
             ログアウト
           </Button>

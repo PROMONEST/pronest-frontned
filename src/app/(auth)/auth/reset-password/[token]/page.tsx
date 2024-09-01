@@ -14,6 +14,7 @@ import Alert from "@mui/material/Alert";
 export default function ResetPasswordPage() {
   const { resetPassword } = useAuth({
     middleware: "guest",
+    redirectIfAuthenticated: "/",
   });
 
   const params = useParams();
