@@ -30,23 +30,21 @@ const NotificationTab = () => {
           <BlankCard>
             <CardContent>
               <Typography variant="h4" mb={2}>
-                Notification Preferences
+                通知設定
               </Typography>
               <Typography color="textSecondary">
-                Select the notificaitons ou would like to receive via email.
-                Please note that you cannot opt out of receving service
-                messages, such as payment, security or legal notifications.
+                メールで受け取りたい通知を選択してください。支払い、セキュリティ、法的な通知などのサービスメッセージの受信をオプトアウトすることはできませんのでご注意ください。
               </Typography>
 
               <CustomFormLabel htmlFor="text-email">
-                Email Address*
+                メールアドレス*
               </CustomFormLabel>
               <CustomTextField id="text-email" variant="outlined" fullWidth />
               <Typography color="textSecondary">
-                Required for notificaitons.
+                通知のために必要です。
               </Typography>
 
-              {/* list 1 */}
+              {/* リスト1 */}
               <Stack direction="row" spacing={2} mt={4}>
                 <Avatar
                   variant="rounded"
@@ -61,10 +59,10 @@ const NotificationTab = () => {
                 </Avatar>
                 <Box>
                   <Typography variant="h6" mb={1}>
-                    Our newsletter
+                    ニュースレター
                   </Typography>
                   <Typography variant="subtitle1" color="textSecondary">
-                    We&apos;ll always let you know about important changes
+                    重要な変更については必ずお知らせします
                   </Typography>
                 </Box>
                 <Box sx={{ ml: "auto !important" }}>
@@ -72,7 +70,7 @@ const NotificationTab = () => {
                 </Box>
               </Stack>
 
-              {/* list 2 */}
+              {/* リスト2 */}
               <Stack direction="row" spacing={2} mt={3}>
                 <Avatar
                   variant="rounded"
@@ -87,10 +85,10 @@ const NotificationTab = () => {
                 </Avatar>
                 <Box>
                   <Typography variant="h6" mb={1}>
-                    Order Confirmation
+                    注文確認
                   </Typography>
                   <Typography variant="subtitle1" color="textSecondary">
-                    You will be notified when customer order any product
+                    顧客が商品を注文したときに通知されます
                   </Typography>
                 </Box>
                 <Box sx={{ ml: "auto !important" }}>
@@ -98,7 +96,7 @@ const NotificationTab = () => {
                 </Box>
               </Stack>
 
-              {/* list 3 */}
+              {/* リスト3 */}
               <Stack direction="row" spacing={2} mt={3}>
                 <Avatar
                   variant="rounded"
@@ -113,10 +111,10 @@ const NotificationTab = () => {
                 </Avatar>
                 <Box>
                   <Typography variant="h6" mb={1}>
-                    Order Status Changed
+                    注文ステータス変更
                   </Typography>
                   <Typography variant="subtitle1" color="textSecondary">
-                    You will be notified when customer make changes to the order
+                    顧客が注文を変更したときに通知されます
                   </Typography>
                 </Box>
                 <Box sx={{ ml: "auto !important" }}>
@@ -124,7 +122,7 @@ const NotificationTab = () => {
                 </Box>
               </Stack>
 
-              {/* list 4 */}
+              {/* リスト4 */}
               <Stack direction="row" spacing={2} mt={3}>
                 <Avatar
                   variant="rounded"
@@ -139,10 +137,10 @@ const NotificationTab = () => {
                 </Avatar>
                 <Box>
                   <Typography variant="h6" mb={1}>
-                    Order Delivered
+                    配送完了
                   </Typography>
                   <Typography variant="subtitle1" color="textSecondary">
-                    You will be notified once the order is delivered
+                    注文が配送されたときに通知されます
                   </Typography>
                 </Box>
                 <Box sx={{ ml: "auto !important" }}>
@@ -150,7 +148,7 @@ const NotificationTab = () => {
                 </Box>
               </Stack>
 
-              {/* list 5 */}
+              {/* リスト5 */}
               <Stack direction="row" spacing={2} mt={3}>
                 <Avatar
                   variant="rounded"
@@ -165,10 +163,10 @@ const NotificationTab = () => {
                 </Avatar>
                 <Box>
                   <Typography variant="h6" mb={1}>
-                    Email Notification
+                    メール通知
                   </Typography>
                   <Typography variant="subtitle1" color="textSecondary">
-                    Turn on email notificaiton to get updates through email
+                    メールで通知を受け取るには、メール通知をオンにしてください
                   </Typography>
                 </Box>
                 <Box sx={{ ml: "auto !important" }}>
@@ -184,13 +182,13 @@ const NotificationTab = () => {
           <BlankCard>
             <CardContent>
               <Typography variant="h4" mb={2}>
-                Date & Time
+                日付と時刻
               </Typography>
               <Typography color="textSecondary">
-                Time zones and calendar display settings.
+                タイムゾーンとカレンダー表示設定。
               </Typography>
 
-              {/* list 1 */}
+              {/* リスト1 */}
               <Stack direction="row" spacing={2} mt={4}>
                 <Avatar
                   variant="rounded"
@@ -205,14 +203,14 @@ const NotificationTab = () => {
                 </Avatar>
                 <Box>
                   <Typography variant="subtitle1" color="textSecondary">
-                    Time zone
+                    タイムゾーン
                   </Typography>
                   <Typography variant="h6" mb={1}>
-                    (UTC + 02:00) Athens, Bucharet
+                    (UTC + 02:00) アテネ、ブカレスト
                   </Typography>
                 </Box>
                 <Box sx={{ ml: "auto !important" }}>
-                  <Tooltip title="Download">
+                  <Tooltip title="ダウンロード">
                     <IconButton>
                       <IconDownload size="22" />
                     </IconButton>
@@ -228,10 +226,10 @@ const NotificationTab = () => {
           <BlankCard>
             <CardContent>
               <Typography variant="h4" mb={2}>
-                Ignore Tracking
+                トラッキング無視
               </Typography>
 
-              {/* list 1 */}
+              {/* リスト1 */}
               <Stack direction="row" spacing={2} mt={4}>
                 <Avatar
                   variant="rounded"
@@ -246,10 +244,10 @@ const NotificationTab = () => {
                 </Avatar>
                 <Box>
                   <Typography variant="h6" mb={1}>
-                    Ignore Browser Tracking
+                    ブラウザトラッキング無視
                   </Typography>
                   <Typography variant="subtitle1" color="textSecondary">
-                    Browser Cookie
+                    ブラウザクッキー
                   </Typography>
                 </Box>
                 <Box sx={{ ml: "auto !important" }}>
@@ -263,10 +261,10 @@ const NotificationTab = () => {
 
       <Stack direction="row" spacing={2} sx={{ justifyContent: "end" }} mt={3}>
         <Button size="large" variant="contained" color="primary">
-          Save
+          保存
         </Button>
         <Button size="large" variant="text" color="error">
-          Cancel
+          キャンセル
         </Button>
       </Stack>
     </>

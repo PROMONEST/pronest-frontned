@@ -29,13 +29,13 @@ const BillsTab = () => {
           <BlankCard>
             <CardContent>
               <Typography variant="h4" mb={2}>
-                Billing Information
+                請求情報
               </Typography>
 
               <Grid container spacing={3}>
                 <Grid item xs={12} sm={6}>
                   <CustomFormLabel sx={{ mt: 0 }} htmlFor="text-bname">
-                    Business Name*
+                    会社名*
                   </CustomFormLabel>
                   <CustomTextField
                     id="text-bname"
@@ -46,18 +46,18 @@ const BillsTab = () => {
                 </Grid>
                 <Grid item xs={12} sm={6}>
                   <CustomFormLabel sx={{ mt: 0 }} htmlFor="text-bsector">
-                    Business Sector*
+                    業種*
                   </CustomFormLabel>
                   <CustomTextField
                     id="text-bsector"
-                    value="Arts, Media & Entertainment"
+                    value="アート、メディア＆エンターテインメント"
                     variant="outlined"
                     fullWidth
                   />
                 </Grid>
                 <Grid item xs={12} sm={6}>
                   <CustomFormLabel sx={{ mt: 0 }} htmlFor="text-baddress">
-                    Business Address*
+                    会社住所*
                   </CustomFormLabel>
                   <CustomTextField
                     id="text-baddress"
@@ -68,18 +68,18 @@ const BillsTab = () => {
                 </Grid>
                 <Grid item xs={12} sm={6}>
                   <CustomFormLabel sx={{ mt: 0 }} htmlFor="text-bcy">
-                    Country*
+                    国*
                   </CustomFormLabel>
                   <CustomTextField
                     id="text-bcy"
-                    value="Romania"
+                    value="ルーマニア"
                     variant="outlined"
                     fullWidth
                   />
                 </Grid>
                 <Grid item xs={12} sm={6}>
                   <CustomFormLabel sx={{ mt: 0 }} htmlFor="text-fname">
-                    First Name*
+                    名*
                   </CustomFormLabel>
                   <CustomTextField
                     id="text-fname"
@@ -90,7 +90,7 @@ const BillsTab = () => {
                 </Grid>
                 <Grid item xs={12} sm={6}>
                   <CustomFormLabel sx={{ mt: 0 }} htmlFor="text-lname">
-                    Last Name*
+                    姓*
                   </CustomFormLabel>
                   <CustomTextField
                     id="text-lname"
@@ -109,22 +109,21 @@ const BillsTab = () => {
           <BlankCard>
             <CardContent>
               <Typography variant="h4" display="flex" mb={2}>
-                Current Plan :
+                現在のプラン：
                 <Typography
                   variant="h4"
                   component="div"
                   ml="2px"
                   color="success.main"
                 >
-                  Executive
+                  エグゼクティブ
                 </Typography>
               </Typography>
               <Typography color="textSecondary">
-                Thanks for being a premium member and supporting our
-                development.
+                プレミアムメンバーとして開発をサポートしていただきありがとうございます。
               </Typography>
 
-              {/* list 1 */}
+              {/* リスト1 */}
               <Stack direction="row" spacing={2} mt={4} mb={2}>
                 <Avatar
                   variant="rounded"
@@ -139,14 +138,14 @@ const BillsTab = () => {
                 </Avatar>
                 <Box>
                   <Typography variant="subtitle1" color="textSecondary">
-                    Current Plan
+                    現在のプラン
                   </Typography>
                   <Typography variant="h6" mb={1}>
-                    750.000 Monthly Visits
+                    月間750,000ビジット
                   </Typography>
                 </Box>
                 <Box sx={{ ml: "auto !important" }}>
-                  <Tooltip title="Add">
+                  <Tooltip title="追加">
                     <IconButton>
                       <IconCirclePlus size="22" />
                     </IconButton>
@@ -156,10 +155,10 @@ const BillsTab = () => {
 
               <Stack direction="row" spacing={2}>
                 <Button variant="contained" color="primary">
-                  Change Plan
+                  プラン変更
                 </Button>
                 <Button variant="outlined" color="error">
-                  Reset Plan
+                  プランリセット
                 </Button>
               </Stack>
             </CardContent>
@@ -171,12 +170,10 @@ const BillsTab = () => {
           <BlankCard>
             <CardContent>
               <Typography variant="h4" mb={2}>
-                Payment Method
+                支払い方法
               </Typography>
-              <Typography color="textSecondary">
-                On 26 December, 2023
-              </Typography>
-              {/* list 1 */}
+              <Typography color="textSecondary">2023年12月26日</Typography>
+              {/* リスト2 */}
               <Stack direction="row" spacing={2} mt={4}>
                 <Avatar
                   variant="rounded"
@@ -198,7 +195,7 @@ const BillsTab = () => {
                   </Typography>
                 </Box>
                 <Box sx={{ ml: "auto !important" }}>
-                  <Tooltip title="Edit">
+                  <Tooltip title="編集">
                     <IconButton>
                       <IconPencilMinus size="22" />
                     </IconButton>
@@ -206,11 +203,10 @@ const BillsTab = () => {
                 </Box>
               </Stack>
               <Typography color="textSecondary" my={1}>
-                If you updated your payment method, it will only be dislpayed
-                here after your next billing cycle.
+                支払い方法を更新した場合、次の請求サイクル後にここに表示されます。
               </Typography>
               <Button variant="outlined" color="error">
-                Cancel Subscription
+                サブスクリプションをキャンセル
               </Button>
             </CardContent>
           </BlankCard>
@@ -219,10 +215,10 @@ const BillsTab = () => {
 
       <Stack direction="row" spacing={2} sx={{ justifyContent: "end" }} mt={3}>
         <Button size="large" variant="contained" color="primary">
-          Save
+          保存
         </Button>
         <Button size="large" variant="text" color="error">
-          Cancel
+          キャンセル
         </Button>
       </Stack>
     </>

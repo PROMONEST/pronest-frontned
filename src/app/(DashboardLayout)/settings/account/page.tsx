@@ -19,10 +19,10 @@ import SecurityTab from "./_component/SecurityTab";
 const BCrumb = [
   {
     to: "/",
-    title: "Home",
+    title: "ホーム",
   },
   {
-    title: "Account Setting",
+    title: "アカウント設定",
   },
 ];
 
@@ -63,12 +63,9 @@ const AccountSetting = () => {
   };
 
   return (
-    <PageContainer
-      title="Account Setting"
-      description="this is Account Setting"
-    >
+    <PageContainer title="アカウント設定" description="アカウント設定画面">
       {/* breadcrumb */}
-      <Breadcrumb title="Account Setting" items={BCrumb} />
+      <Breadcrumb title="アカウント設定" items={BCrumb} />
       {/* end breadcrumb */}
 
       <Grid container spacing={3}>
@@ -84,26 +81,26 @@ const AccountSetting = () => {
                 <Tab
                   iconPosition="start"
                   icon={<IconUserCircle size="22" />}
-                  label="Account"
+                  label="アカウント"
                   {...a11yProps(0)}
                 />
 
                 <Tab
                   iconPosition="start"
                   icon={<IconBell size="22" />}
-                  label="Notifications"
+                  label="通知"
                   {...a11yProps(1)}
                 />
                 <Tab
                   iconPosition="start"
                   icon={<IconArticle size="22" />}
-                  label="Bills"
+                  label="カード情報"
                   {...a11yProps(2)}
                 />
                 <Tab
                   iconPosition="start"
                   icon={<IconLock size="22" />}
-                  label="Security"
+                  label="セキュリティ"
                   {...a11yProps(3)}
                 />
               </Tabs>

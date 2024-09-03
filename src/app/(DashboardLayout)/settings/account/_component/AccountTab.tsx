@@ -16,19 +16,19 @@ import CustomSelect from "@/app/components/forms/theme-elements/CustomSelect";
 const locations = [
   {
     value: "us",
-    label: "United States",
+    label: "アメリカ合衆国",
   },
   {
     value: "uk",
-    label: "United Kingdom",
+    label: "イギリス",
   },
   {
     value: "india",
-    label: "India",
+    label: "インド",
   },
   {
     value: "russia",
-    label: "Russia",
+    label: "ロシア",
   },
 ];
 
@@ -36,19 +36,19 @@ const locations = [
 const currencies = [
   {
     value: "us",
-    label: "US Dollar ($)",
+    label: "アメリカドル ($)",
   },
   {
     value: "uk",
-    label: "United Kingdom (Pound)",
+    label: "イギリス（ポンド）",
   },
   {
     value: "india",
-    label: "India (INR)",
+    label: "インド（INR）",
   },
   {
     value: "russia",
-    label: "Russia (Ruble)",
+    label: "ロシアルーブル",
   },
 ];
 
@@ -68,15 +68,15 @@ const AccountTab = () => {
 
   return (
     <Grid container spacing={3}>
-      {/* Change Profile */}
+      {/* プロフィールの変更 */}
       <Grid item xs={12} lg={6}>
         <BlankCard>
           <CardContent>
             <Typography variant="h5" mb={1}>
-              Change Profile
+              プロフィールの変更
             </Typography>
             <Typography color="textSecondary" mb={3}>
-              Change your profile picture from here
+              ここからプロフィール画像を変更してください
             </Typography>
             <Box textAlign="center" display="flex" justifyContent="center">
               <Box>
@@ -92,30 +92,30 @@ const AccountTab = () => {
                   my={3}
                 >
                   <Button variant="contained" color="primary" component="label">
-                    Upload
+                    アップロード
                     <input hidden accept="image/*" multiple type="file" />
                   </Button>
                   <Button variant="outlined" color="error">
-                    Reset
+                    リセット
                   </Button>
                 </Stack>
                 <Typography variant="subtitle1" color="textSecondary" mb={4}>
-                  Allowed JPG, GIF or PNG. Max size of 800K
+                  JPG、GIF、またはPNGが許可されています。最大サイズは800Kです
                 </Typography>
               </Box>
             </Box>
           </CardContent>
         </BlankCard>
       </Grid>
-      {/*  Change Password */}
+      {/* パスワードの変更 */}
       <Grid item xs={12} lg={6}>
         <BlankCard>
           <CardContent>
             <Typography variant="h5" mb={1}>
-              Change Password
+              パスワードの変更
             </Typography>
             <Typography color="textSecondary" mb={3}>
-              To change your password please confirm here
+              パスワードを変更するには、こちらで確認してください
             </Typography>
             <form>
               <CustomFormLabel
@@ -124,7 +124,7 @@ const AccountTab = () => {
                 }}
                 htmlFor="text-cpwd"
               >
-                Current Password
+                現在のパスワード
               </CustomFormLabel>
               <CustomTextField
                 id="text-cpwd"
@@ -135,7 +135,7 @@ const AccountTab = () => {
               />
               {/* 2 */}
               <CustomFormLabel htmlFor="text-npwd">
-                New Password
+                新しいパスワード
               </CustomFormLabel>
               <CustomTextField
                 id="text-npwd"
@@ -146,7 +146,7 @@ const AccountTab = () => {
               />
               {/* 3 */}
               <CustomFormLabel htmlFor="text-conpwd">
-                Confirm Password
+                パスワードの確認
               </CustomFormLabel>
               <CustomTextField
                 id="text-conpwd"
@@ -159,15 +159,15 @@ const AccountTab = () => {
           </CardContent>
         </BlankCard>
       </Grid>
-      {/* Edit Details */}
+      {/* 詳細の編集 */}
       <Grid item xs={12}>
         <BlankCard>
           <CardContent>
             <Typography variant="h5" mb={1}>
-              Personal Details
+              個人情報の詳細
             </Typography>
             <Typography color="textSecondary" mb={3}>
-              To change your personal detail , edit and save from here
+              個人情報を変更するには、こちらで編集して保存してください
             </Typography>
             <form>
               <Grid container spacing={3}>
@@ -178,7 +178,7 @@ const AccountTab = () => {
                     }}
                     htmlFor="text-name"
                   >
-                    Your Name
+                    お名前
                   </CustomFormLabel>
                   <CustomTextField
                     id="text-name"
@@ -195,7 +195,7 @@ const AccountTab = () => {
                     }}
                     htmlFor="text-store-name"
                   >
-                    Store Name
+                    店舗名
                   </CustomFormLabel>
                   <CustomTextField
                     id="text-store-name"
@@ -212,7 +212,7 @@ const AccountTab = () => {
                     }}
                     htmlFor="text-location"
                   >
-                    Location
+                    ロケーション
                   </CustomFormLabel>
                   <CustomSelect
                     fullWidth
@@ -236,7 +236,7 @@ const AccountTab = () => {
                     }}
                     htmlFor="text-currency"
                   >
-                    Currency
+                    通貨
                   </CustomFormLabel>
                   <CustomSelect
                     fullWidth
@@ -260,7 +260,7 @@ const AccountTab = () => {
                     }}
                     htmlFor="text-email"
                   >
-                    Email
+                    メールアドレス
                   </CustomFormLabel>
                   <CustomTextField
                     id="text-email"
@@ -277,7 +277,7 @@ const AccountTab = () => {
                     }}
                     htmlFor="text-phone"
                   >
-                    Phone
+                    電話番号
                   </CustomFormLabel>
                   <CustomTextField
                     id="text-phone"
@@ -294,7 +294,7 @@ const AccountTab = () => {
                     }}
                     htmlFor="text-address"
                   >
-                    Address
+                    住所
                   </CustomFormLabel>
                   <CustomTextField
                     id="text-address"
@@ -314,10 +314,10 @@ const AccountTab = () => {
           mt={3}
         >
           <Button size="large" variant="contained" color="primary">
-            Save
+            保存
           </Button>
           <Button size="large" variant="text" color="error">
-            Cancel
+            キャンセル
           </Button>
         </Stack>
       </Grid>

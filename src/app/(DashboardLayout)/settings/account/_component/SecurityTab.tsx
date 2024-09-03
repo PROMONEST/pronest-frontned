@@ -25,7 +25,7 @@ const SecurityTab = () => {
           <BlankCard>
             <CardContent>
               <Typography variant="h4" mb={2}>
-                Two-factor Authentication
+                二要素認証
               </Typography>
               <Stack
                 direction="row"
@@ -38,53 +38,53 @@ const SecurityTab = () => {
                   Corporis sapiente sunt earum officiis laboriosam ut.
                 </Typography>
                 <Button variant="contained" color="primary">
-                  Enable
+                  有効にする
                 </Button>
               </Stack>
 
               <Divider />
 
-              {/* list 1 */}
+              {/* リスト1 */}
               <Stack direction="row" spacing={2} py={2} alignItems="center">
                 <Box>
-                  <Typography variant="h6">Authentication App</Typography>
+                  <Typography variant="h6">認証アプリ</Typography>
                   <Typography variant="subtitle1" color="textSecondary">
-                    Google auth app
+                    Google認証アプリ
                   </Typography>
                 </Box>
                 <Box sx={{ ml: "auto !important" }}>
                   <Button variant="text" color="primary">
-                    Setup
+                    設定
                   </Button>
                 </Box>
               </Stack>
               <Divider />
-              {/* list 2 */}
+              {/* リスト2 */}
               <Stack direction="row" spacing={2} py={2} alignItems="center">
                 <Box>
-                  <Typography variant="h6">Another e-mail</Typography>
+                  <Typography variant="h6">別のEメール</Typography>
                   <Typography variant="subtitle1" color="textSecondary">
-                    E-mail to send verification link
+                    認証リンクを送信するEメール
                   </Typography>
                 </Box>
                 <Box sx={{ ml: "auto !important" }}>
                   <Button variant="text" color="primary">
-                    Setup
+                    設定
                   </Button>
                 </Box>
               </Stack>
               <Divider />
-              {/* list 3 */}
+              {/* リスト3 */}
               <Stack direction="row" spacing={2} py={2} alignItems="center">
                 <Box>
-                  <Typography variant="h6">SMS Recovery</Typography>
+                  <Typography variant="h6">SMSリカバリ</Typography>
                   <Typography variant="subtitle1" color="textSecondary">
-                    Your phone number or something
+                    あなたの電話番号など
                   </Typography>
                 </Box>
                 <Box sx={{ ml: "auto !important" }}>
                   <Button variant="text" color="primary">
-                    Setup
+                    設定
                   </Button>
                 </Box>
               </Stack>
@@ -107,16 +107,16 @@ const SecurityTab = () => {
               </Avatar>
 
               <Typography variant="h5" mt={2}>
-                Devices
+                デバイス
               </Typography>
               <Typography color="textSecondary" mt={1} mb={2}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit Rem.
               </Typography>
               <Button variant="contained" color="primary">
-                Sign out from all devices
+                全てのデバイスからサインアウト
               </Button>
 
-              {/* list 1 */}
+              {/* リスト1 */}
               <Stack
                 direction="row"
                 spacing={2}
@@ -129,7 +129,7 @@ const SecurityTab = () => {
                 <Box>
                   <Typography variant="h6">iPhone 14</Typography>
                   <Typography variant="subtitle1" color="textSecondary">
-                    London UK, Oct 23 at 1:15 AM
+                    イギリス ロンドン, 10月23日 午前1:15
                   </Typography>
                 </Box>
                 <Box sx={{ ml: "auto !important" }}>
@@ -139,14 +139,14 @@ const SecurityTab = () => {
                 </Box>
               </Stack>
               <Divider />
-              {/* list 2 */}
+              {/* リスト2 */}
               <Stack direction="row" spacing={2} py={2} alignItems="center">
                 <IconDeviceLaptop size="26" />
 
                 <Box>
-                  <Typography variant="h6">Macbook Air </Typography>
+                  <Typography variant="h6">Macbook Air</Typography>
                   <Typography variant="subtitle1" color="textSecondary">
-                    Gujarat India, Oct 24 at 3:15 AM
+                    インド グジャラート, 10月24日 午前3:15
                   </Typography>
                 </Box>
                 <Box sx={{ ml: "auto !important" }}>
@@ -157,7 +157,7 @@ const SecurityTab = () => {
               </Stack>
               <Stack>
                 <Button variant="text" color="primary">
-                  Need Help ?
+                  サポートが必要ですか？
                 </Button>
               </Stack>
             </CardContent>
@@ -167,10 +167,10 @@ const SecurityTab = () => {
 
       <Stack direction="row" spacing={2} sx={{ justifyContent: "end" }} mt={3}>
         <Button size="large" variant="contained" color="primary">
-          Save
+          保存
         </Button>
         <Button size="large" variant="text" color="error">
-          Cancel
+          キャンセル
         </Button>
       </Stack>
     </>
