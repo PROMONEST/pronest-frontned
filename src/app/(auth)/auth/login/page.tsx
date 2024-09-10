@@ -1,4 +1,5 @@
 "use client";
+
 import Link from "next/link";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
@@ -7,16 +8,18 @@ import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import Logo from "@/app/(DashboardLayout)/layout/shared/logo/Logo";
 import PageContainer from "@/app/components/container/PageContainer";
-import { useAuth } from "@/hooks/auth";
 import { useState } from "react";
 import Alert from "@mui/material/Alert";
 import LoginForm from "./_components/LoginForm/LoginForm";
+import { useLogin } from "./_api/useLogin";
+import { useAuth } from "@/hooks/useAuth";
 
 export default function LoginPage() {
-  const { login } = useAuth({
+  const { user, error } = useAuth({
     middleware: "guest",
     redirectIfAuthenticated: "/",
   });
+  const { login } = useLogin();
 
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -28,7 +31,7 @@ export default function LoginPage() {
     event.preventDefault();
 
     try {
-      login({
+      await login({
         email,
         password,
         remember: shouldRemember,

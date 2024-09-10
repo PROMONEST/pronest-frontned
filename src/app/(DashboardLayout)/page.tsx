@@ -2,7 +2,7 @@
 import Typography from "@mui/material/Typography";
 import PageContainer from "@/app/components/container/PageContainer";
 import DashboardCard from "@/app/components/shared/DashboardCard";
-import { useAuth } from "@/hooks/auth";
+import { useAuth } from "@/hooks/useAuth";
 
 export default function DashBoard() {
   const { user, error } = useAuth({ middleware: "auth" });
