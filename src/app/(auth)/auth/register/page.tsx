@@ -8,9 +8,9 @@ import Typography from "@mui/material/Typography";
 import Link from "next/link";
 import Logo from "@/app/(DashboardLayout)/layout/shared/logo/Logo";
 import PageContainer from "@/app/components/container/PageContainer";
-import AuthRegister from "../../authForms/AuthRegister";
 import { useAuth } from "@/hooks/auth";
 import { useState } from "react";
+import RegisterForm from "./_components/RegisterForm/RegisterForm";
 
 const AuthRegisterPage = () => {
   const { register } = useAuth({
@@ -81,7 +81,7 @@ const AuthRegisterPage = () => {
               <Box display="flex" alignItems="center" justifyContent="center">
                 <Logo />
               </Box>
-              <AuthRegister
+              <RegisterForm
                 onSubmit={handleRegister}
                 errors={errors}
                 successMessage={successMessage}

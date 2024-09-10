@@ -4,19 +4,19 @@ import CustomTextField from "@/app/components/forms/theme-elements/CustomTextFie
 import CustomFormLabel from "@/app/components/forms/theme-elements/CustomFormLabel";
 import Link from "next/link";
 
-interface AuthForgotPasswordProps {
+interface ForgotPasswordFormProps {
   email: string;
   setEmail: (value: string) => void;
   errors: Record<string, string[]>;
   handleSubmit: (event: React.FormEvent) => void;
 }
 
-export default function AuthForgotPassword({
+export default function ForgotPasswordForm({
   email,
   setEmail,
   errors,
   handleSubmit,
-}: AuthForgotPasswordProps) {
+}: ForgotPasswordFormProps) {
   return (
     <form onSubmit={handleSubmit}>
       <Stack mt={4} spacing={2}>

@@ -9,7 +9,7 @@ import CustomTextField from "@/app/components/forms/theme-elements/CustomTextFie
 import CustomFormLabel from "@/app/components/forms/theme-elements/CustomFormLabel";
 import FormControlLabel from "@mui/material/FormControlLabel";
 
-interface AuthLoginProps {
+interface LoginFormProps {
   email: string;
   password: string;
   setEmail: (value: string) => void;
@@ -21,7 +21,7 @@ interface AuthLoginProps {
   subtitle?: React.ReactNode;
 }
 
-const AuthLogin: React.FC<AuthLoginProps> = ({
+const LoginForm: React.FC<LoginFormProps> = ({
   email,
   password,
   setEmail,
@@ -107,4 +107,4 @@ const AuthLogin: React.FC<AuthLoginProps> = ({
   );
 };
 
-export default AuthLogin;
+export default LoginForm;

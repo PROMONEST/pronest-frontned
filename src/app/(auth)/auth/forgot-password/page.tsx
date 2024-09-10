@@ -6,9 +6,9 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import Logo from "@/app/(DashboardLayout)/layout/shared/logo/Logo";
 import PageContainer from "@/app/components/container/PageContainer";
-import AuthForgotPassword from "../../authForms/AuthForgotPassword";
 import { useAuth } from "@/hooks/auth";
 import Alert from "@mui/material/Alert";
+import ForgotPasswordForm from "./_components/ForgotPasswordForm/ForgotPasswordForm";
 
 export default function ForgotPasswordPage() {
   const { forgotPassword } = useAuth({
@@ -80,7 +80,7 @@ export default function ForgotPasswordPage() {
                 パスワードをリセットするためのリンクをメールでお送りします。
               </Typography>
               {status && <Alert severity="success">{status}</Alert>}
-              <AuthForgotPassword
+              <ForgotPasswordForm
                 email={email}
                 setEmail={setEmail}
                 errors={errors}

@@ -8,7 +8,7 @@ import CustomTextField from "@/app/components/forms/theme-elements/CustomTextFie
 import CustomFormLabel from "@/app/components/forms/theme-elements/CustomFormLabel";
 import Alert from "@mui/material/Alert";
 
-interface AuthRegisterProps {
+interface RegisterFormProps {
   title?: string;
   subtitle?: React.ReactNode;
   subtext?: React.ReactNode;
@@ -17,7 +17,7 @@ interface AuthRegisterProps {
   successMessage: string | null;
 }
 
-const AuthRegister: React.FC<AuthRegisterProps> = ({
+const RegisterForm: React.FC<RegisterFormProps> = ({
   title,
   subtitle,
   subtext,
@@ -100,4 +100,4 @@ const AuthRegister: React.FC<AuthRegisterProps> = ({
   );
 };
 
-export default AuthRegister;
+export default RegisterForm;

@@ -4,7 +4,7 @@ import Stack from "@mui/material/Stack";
 import CustomTextField from "@/app/components/forms/theme-elements/CustomTextField";
 import CustomFormLabel from "@/app/components/forms/theme-elements/CustomFormLabel";
 
-interface AuthResetPasswordProps {
+interface ResetPasswordFormProps {
   email: string;
   setEmail: (value: string) => void;
   password: string;
@@ -15,7 +15,7 @@ interface AuthResetPasswordProps {
   handleSubmit: (event: React.FormEvent) => void;
 }
 
-export default function AuthResetPassword({
+export default function ResetPasswordForm({
   email,
   setEmail,
   password,
@@ -24,7 +24,7 @@ export default function AuthResetPassword({
   setPasswordConfirmation,
   errors,
   handleSubmit,
-}: AuthResetPasswordProps) {
+}: ResetPasswordFormProps) {
   return (
     <form onSubmit={handleSubmit}>
       <Stack mt={4} spacing={2}>

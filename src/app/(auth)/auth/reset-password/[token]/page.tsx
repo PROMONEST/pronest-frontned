@@ -7,9 +7,9 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import Logo from "@/app/(DashboardLayout)/layout/shared/logo/Logo";
 import PageContainer from "@/app/components/container/PageContainer";
-import AuthResetPassword from "@/app/(auth)/authForms/AuthResetPassword";
 import { useAuth } from "@/hooks/auth";
 import Alert from "@mui/material/Alert";
+import ResetPasswordForm from "./_components/ResetPasswordForm/ResetPasswordForm";
 
 export default function ResetPasswordPage() {
   const { resetPassword } = useAuth({
@@ -103,7 +103,7 @@ export default function ResetPasswordPage() {
               {errors.token && (
                 <Alert severity="error">{errors.token[0]}</Alert>
               )}
-              <AuthResetPassword
+              <ResetPasswordForm
                 email={email}
                 setEmail={setEmail}
                 password={password}

@@ -7,10 +7,10 @@ import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import Logo from "@/app/(DashboardLayout)/layout/shared/logo/Logo";
 import PageContainer from "@/app/components/container/PageContainer";
-import AuthLogin from "../../authForms/AuthLogin";
 import { useAuth } from "@/hooks/auth";
 import { useState } from "react";
 import Alert from "@mui/material/Alert";
+import LoginForm from "./_components/LoginForm/LoginForm";
 
 export default function LoginPage() {
   const { login } = useAuth({
@@ -81,7 +81,7 @@ export default function LoginPage() {
                 <Logo />
               </Box>
               {status && <Alert severity="success">{status}</Alert>}
-              <AuthLogin
+              <LoginForm
                 email={email}
                 password={password}
                 setEmail={setEmail}
