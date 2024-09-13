@@ -7,15 +7,17 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import Logo from "@/app/(DashboardLayout)/layout/shared/logo/Logo";
 import PageContainer from "@/app/components/container/PageContainer";
-import AuthResetPassword from "@/app/(auth)/authForms/AuthResetPassword";
-import { useAuth } from "@/hooks/auth";
 import Alert from "@mui/material/Alert";
+import ResetPasswordForm from "./_components/ResetPasswordForm/ResetPasswordForm";
+import { useResetPassword } from "./_api/useResetPassword";
+import { useAuth } from "@/hooks/useAuth";
 
 export default function ResetPasswordPage() {
-  const { resetPassword } = useAuth({
+  const { user, error } = useAuth({
     middleware: "guest",
     redirectIfAuthenticated: "/",
   });
+  const { resetPassword } = useResetPassword();
 
   const params = useParams();
   const searchParams = useSearchParams();
@@ -28,7 +30,6 @@ export default function ResetPasswordPage() {
   useEffect(() => {
     const token = params.token;
     const emailFromUrl = searchParams.get("email") || "";
-
     setEmail(emailFromUrl);
   }, [params, searchParams]);
 
@@ -103,7 +104,7 @@ export default function ResetPasswordPage() {
               {errors.token && (
                 <Alert severity="error">{errors.token[0]}</Alert>
               )}
-              <AuthResetPassword
+              <ResetPasswordForm
                 email={email}
                 setEmail={setEmail}
                 password={password}

@@ -6,15 +6,18 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import Logo from "@/app/(DashboardLayout)/layout/shared/logo/Logo";
 import PageContainer from "@/app/components/container/PageContainer";
-import AuthForgotPassword from "../../authForms/AuthForgotPassword";
-import { useAuth } from "@/hooks/auth";
 import Alert from "@mui/material/Alert";
+import ForgotPasswordForm from "./_components/ForgotPasswordForm/ForgotPasswordForm";
+import { useForgotPassword } from "./_api/useForgotPassword";
+import { useAuth } from "@/hooks/useAuth";
 
 export default function ForgotPasswordPage() {
-  const { forgotPassword } = useAuth({
+  const { user, error } = useAuth({
     middleware: "guest",
     redirectIfAuthenticated: "/",
   });
+
+  const { forgotPassword } = useForgotPassword();
 
   const [email, setEmail] = useState<string>("");
   const [errors, setErrors] = useState<Record<string, string[]>>({});
@@ -24,7 +27,7 @@ export default function ForgotPasswordPage() {
     event.preventDefault();
 
     try {
-      forgotPassword({ email, setErrors, setStatus });
+      await forgotPassword({ email, setErrors, setStatus });
     } catch (error) {
       // TODO: エラーハンドリング
     }
@@ -80,7 +83,7 @@ export default function ForgotPasswordPage() {
                 パスワードをリセットするためのリンクをメールでお送りします。
               </Typography>
               {status && <Alert severity="success">{status}</Alert>}
-              <AuthForgotPassword
+              <ForgotPasswordForm
                 email={email}
                 setEmail={setEmail}
                 errors={errors}

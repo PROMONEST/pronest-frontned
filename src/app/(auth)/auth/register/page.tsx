@@ -8,15 +8,17 @@ import Typography from "@mui/material/Typography";
 import Link from "next/link";
 import Logo from "@/app/(DashboardLayout)/layout/shared/logo/Logo";
 import PageContainer from "@/app/components/container/PageContainer";
-import AuthRegister from "../../authForms/AuthRegister";
-import { useAuth } from "@/hooks/auth";
 import { useState } from "react";
+import RegisterForm from "./_components/RegisterForm/RegisterForm";
+import { useRegister } from "./_api/useRegister";
+import { useAuth } from "@/hooks/useAuth";
 
 const AuthRegisterPage = () => {
-  const { register } = useAuth({
+  const { user, error } = useAuth({
     middleware: "guest",
     redirectIfAuthenticated: "/",
   });
+  const { register } = useRegister();
 
   const [errors, setErrors] = useState<Record<string, string[]>>({});
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
@@ -81,7 +83,7 @@ const AuthRegisterPage = () => {
               <Box display="flex" alignItems="center" justifyContent="center">
                 <Logo />
               </Box>
-              <AuthRegister
+              <RegisterForm
                 onSubmit={handleRegister}
                 errors={errors}
                 successMessage={successMessage}

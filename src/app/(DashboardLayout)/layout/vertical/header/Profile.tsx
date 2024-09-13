@@ -10,8 +10,7 @@ import Typography from "@mui/material/Typography";
 import * as dropdownData from "./data";
 import { IconMail } from "@tabler/icons-react";
 import { Stack } from "@mui/system";
-import Image from "next/image";
-import { useAuth } from "@/hooks/auth";
+import { useAuth } from "@/hooks/useAuth";
 
 const Profile = () => {
   const { user, logout } = useAuth();

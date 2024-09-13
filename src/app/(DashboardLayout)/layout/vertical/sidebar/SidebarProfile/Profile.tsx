@@ -7,8 +7,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import { useSelector } from "@/store/hooks";
 import { IconPower } from "@tabler/icons-react";
 import { AppState } from "@/store/store";
-import { useAuth } from "@/hooks/auth";
-import Link from "next/link";
+import { useAuth } from "@/hooks/useAuth";
 
 export const Profile = () => {
   const customizer = useSelector((state: AppState) => state.customizer);
